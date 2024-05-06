@@ -1,0 +1,33 @@
+body{
+    background-color: darkgray;
+}
+.caja{
+    position: relative;
+    background-color: black;
+}
+.cajaCarga{
+    text-align: -webkit-center;
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    transform: translate(50%, 50%)
+}
+.cajaConsulta{
+    text-align: -webkit-center;
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    transform: translate(-50%, 50%)
+}
+.titulos{
+    text-align: -webkit-center;
+    font-style: italic;
+    font-weight: 900;
+    text-decoration: underline;
+}
