@@ -31,3 +31,14 @@ body{
     font-weight: 900;
     text-decoration: underline;
 }
+.cajaModificar{
+    text-align: -webkit-center;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(165, 142, 42);
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    transform: translate(-50%, 150%)
+}
+

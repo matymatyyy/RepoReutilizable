@@ -5,6 +5,8 @@ window.addEventListener("load", function(){
     const inputMateria= document.getElementById("progra");
     const inputNota= document.getElementById("mate");
     const texto= document.getElementById("texto");
+    const inputDni = document.getElementById("DNI");
+    const inputMail = document.getElementById("mail");
 
     var lista={};
     lista=baseDato();
@@ -16,21 +18,31 @@ window.addEventListener("load", function(){
 
     botonCargar.addEventListener("click", function() {
         var alumno = {
+            "info":{
+                "nombre": inputNombre.value,
+                "mail": inputMail.value,
+
+            },
             "materias": {
                 "Programacion": [],
                 "Matematica": [],
                 "Sistemas": []
             }
         }
-        if (inputNombre.value=="") {
-            texto.innerHTML = "No completaste el nombre";
+        if (inputDni.value=="") {
+            texto.innerHTML = "No completaste el DNI";
         }else{
-            if (lista[inputNombre.value]) {
+            if (lista[inputDni.value]) {
                 NotaPush();
                 cargaDB();
-            }else{
+            }else if(inputMail.value==""){
+                texto.innerHTML="ingresa un mail";
+            }else if(inputNombre.value== ""){
+                texto.innerHTML= "ingrese un nombre";
+            }
+            else{
                 texto.innerHTML= "ingreso el pibe:"+inputNombre.value;
-                lista[inputNombre.value] = alumno;
+                lista[inputDni.value] = alumno;
                 NotaPush();
                 cargaDB();
             }
@@ -40,7 +52,7 @@ window.addEventListener("load", function(){
     })
 
     function NotaPush() {
-        lista[inputNombre.value]["materias"][inputMateria.value].push(inputNota.value);
+        lista[inputDni.value]["materias"][inputMateria.value].push(inputNota.value);
     }
 
     function baseDato(){
