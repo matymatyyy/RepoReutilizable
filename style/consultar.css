@@ -1,0 +1,10 @@
+.caja{
+    display: flex;
+    flex-direction: column;
+    width: 60em;
+    gap: 1em;
+    border: solid blue;
+    padding: 1em;
+    position: absolute;
+    transform: translate(15%, 30%)
+}

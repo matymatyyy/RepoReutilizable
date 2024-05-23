@@ -14,6 +14,7 @@ window.addEventListener("load", function() {
     });
 
     botonConsulta.addEventListener("click", function(){
+        texto.innerHTML="";
         if (lista[pibe.value]) {
             var a=lista[pibe.value]["materias"][materia.value];
             var contador = 0;
@@ -22,12 +23,17 @@ window.addEventListener("load", function() {
             }
             resultado = contador / a.length;
             if (resultado >= 6) {
-                texto.innerHTML += `${pibe.value} aprobo con ${resultado}`
+                texto.innerHTML += `${lista[pibe.value]["info"]["nombre"]}, aprobo ${materia.value} con ${resultado} `
             } else {
-                texto.innerHTML += `${pibe.value} desaprobo con ${resultado}`   
+                if(isNaN(resultado)){
+                    texto.innerHTML += `este pibe no tiene notas en ${materia.value}`
+                }else{
+                   
+                    texto.innerHTML += `${lista[pibe.value]["info"]["nombre"]}, desaprobo ${materia.value} con ${resultado}`    
+                }  
             }
         }else{
-            texto.innerHTML = `No exoiste ${pibe.value}`
+            texto.innerHTML = `No existe ${lista[pibe.value]["info"]["nombre"]}`
         }
     });
 })

@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../scrips/consulta.js"></script>
-    <link href="" rel="stylesheet">
+    <link href="../style/consultar.css" rel="stylesheet">
     <title>consulta</title>
 </head>
 <body>
     <div>
         <button id="seVuelve">Volver</button>
     </div>
-    <label for="nombre">Ingrese el nombre</label>
-    <input id="nombre" type="text" placeholder="Gordo"></input>
-    <label for="materia">Eligir materia: </label>
-    <select id="materia" name="materia">
-    <option value="Programacion">Programacion</option>
-    <option value="Matematica">Matematica</option>
-    <option value="Sistemas">Sistemas</option>
-    </select>
-    <button  id="botonConsulta">Consultar</button>
-    <p id="texto"></p>
+    <div class="caja">
+        <label for="nombre">Ingrese el DNI</label>
+        <input id="nombre" type="number" placeholder="12345678"></input>
+        <label for="materia">Eligir materia: </label>
+        <select id="materia" name="materia">
+        <option value="Programacion">Programacion</option>
+        <option value="Matematica">Matematica</option>
+        <option value="Sistemas">Sistemas</option>
+        </select>
+        <button  id="botonConsulta">Consultar</button>
+        <p id="texto"></p>
+    </div>
 </body>
 </html>
